@@ -10,6 +10,8 @@ The styles on this plugin have been altered to match existing nova fields.
 
 When working with an empty DB field, the console no longer returns a json parse error
 
+Multiple Editors can be used on a single page
+
 ## Installation
 
 
