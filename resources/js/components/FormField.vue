@@ -30,7 +30,7 @@
             setInitialValue() {
 
                 let self = this;
-                let currentContent = JSON.parse(self.field.value);
+                let currentContent = (self.field.value ? JSON.parse(self.field.value) : self.field.value);
 
                 var editor = new EditorJS({
                     /**
