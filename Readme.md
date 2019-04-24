@@ -7,14 +7,10 @@ A Laravel Nova implementation of [Editor.js](https://github.com/codex-team/edito
 
 ## Modified styles
 The styles on this plugin have been altered from (https://github.com/advoor/nova-editor-js) to match existing nova fields
+When working with an empty DB field, the console no longer returns a json parse error
 
 ## Installation
 
-Install via composer:
-
-```
-composer require advoor/nova-editor-js
-```
 
 Publish the config file
 ```
