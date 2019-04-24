@@ -1,5 +1,5 @@
 <template>
-    <default-field :field="field" :errors="errors" :fullWidthContent="true">
+    <default-field :field="field" :errors="errors">
         <template slot="field">
             <div id="editorjs"></div>
         </template>
