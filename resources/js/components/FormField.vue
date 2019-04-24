@@ -1,7 +1,7 @@
 <template>
     <default-field :field="field" :errors="errors">
         <template slot="field">
-            <div id="editorjs"></div>
+            <div class="editorjs" :id="randID"></div>
         </template>
     </default-field>
 </template>
@@ -22,7 +22,11 @@
         mixins: [FormField, HandlesValidationErrors],
 
         props: ['resourceName', 'resourceId', 'field'],
-
+        data: function () {
+            return {
+                randID : ''
+            }
+        },
         methods: {
             /*
              * Set the initial, internal value for the field.
@@ -32,11 +36,13 @@
                 let self = this;
                 let currentContent = (self.field.value ? JSON.parse(self.field.value) : self.field.value);
 
+                this.randID = this.generateRandId(); //unique id for this instance of the editor.  You may need multiple on the page
+
                 var editor = new EditorJS({
                     /**
                      * Wrapper of Editor
                      */
-                    holderId: 'editorjs',
+                    holderId:  this.randID,
                     /**
                      * Tools list
                      */
@@ -99,6 +105,9 @@
                         });
                     }
                 });
+            },
+            generateRandId : function(){
+                return `editorjs_${Math.random().toString(36).substr(2, 9)}`;
             },
 
             /**
